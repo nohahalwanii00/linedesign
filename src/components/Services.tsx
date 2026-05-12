@@ -14,24 +14,30 @@ const iconMap: Record<string, LucideIcon> = {
   ClipboardList,
 };
 
+const SAMPLE_SERVICES: Service[] = [
+  { id: '1', title: 'Residential Architecture', description: 'Designing bespoke homes tailored to your lifestyle', icon: 'Home', sort_order: 1, created_at: new Date().toISOString() },
+  { id: '2', title: 'Commercial Design', description: 'Creating inspiring workspaces that elevate productivity', icon: 'Layers', sort_order: 2, created_at: new Date().toISOString() },
+  { id: '3', title: 'Interior Design', description: 'Crafting interior spaces that reflect your personality', icon: 'Monitor', sort_order: 3, created_at: new Date().toISOString() },
+  { id: '4', title: 'Urban Planning', description: 'Designing sustainable communities for tomorrow', icon: 'Map', sort_order: 4, created_at: new Date().toISOString() },
+  { id: '5', title: 'Landscape Design', description: 'Blending architecture with nature', icon: 'Trees', sort_order: 5, created_at: new Date().toISOString() },
+  { id: '6', title: 'Project Management', description: 'End-to-end project delivery with precision', icon: 'ClipboardList', sort_order: 6, created_at: new Date().toISOString() }
+];
+
 export default function Services() {
   const { ref, inView } = useInView();
-  const [services, setServices] = useState<Service[]>([]);
+  const [services, setServices] = useState<Service[]>(SAMPLE_SERVICES);
 
- useEffect(() => {
-  supabase
-    .from('services')
-    .select('*')
-    .order('sort_order')
-    .then(({ data, error }) => {
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      setServices(data ?? []);
-    });
-}, []);
+ // useEffect(() => {
+ //  supabase
+ //    .from('services')
+ //    .select('*')
+ //    .order('sort_order')
+ //    .then(({ data, error }) => {
+ //      if (!error && data && data.length > 0) {
+ //        setServices(data);
+ //      }
+ //    });
+ // }, []);
   return (
     <section id="services" className="py-28 lg:py-36 bg-stone-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">

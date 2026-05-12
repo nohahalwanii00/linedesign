@@ -4,30 +4,129 @@ import { useInView } from '../hooks/useInView';
 import { supabase } from '../lib/supabase';
 import type { Project, Category } from '../lib/types';
 
+const SAMPLE_PROJECTS: Project[] = [
+  {
+    id: '1',
+    title: 'GREENERY WORLD',
+    slug: 'graduation-project',
+    description: 'INTERGATION BETWEEN THE NATURE AND HUMANS BY USING ARCHITECTURAL ELEMENTS OF ENVIRONMENTAL PSYCHOLOGY',
+    location: 'Tripoli, Lebanon',
+    year: 2025,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133039.png',
+    thumbnail: '/Screenshot 2026-05-12 133039.png',
+    featured: true,
+    sort_order: 1,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Residential', slug: 'residential' }
+  },
+  {
+    id: '2',
+    title: 'Al Nasiriyah Compound',
+    slug: 'al-nasiriyah-compound',
+    description: 'Designed and developed innovative execution drawings for a villa complex in Al Nasiriyah, Riyadh, ensuring precision, clarity, and constructability. Translated architectural concepts into detailed technical documentation, enhancing workflow efficiency and supporting seamless project implementation.',
+    location: 'Al Nasiriyah - Saudi Arabia',
+    year: 2024,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133100.png',
+    thumbnail: '/Screenshot 2026-05-12 133100.png',
+    featured: false,
+    sort_order: 2,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Residential', slug: 'residential' }
+  },
+  {
+    id: '3',
+    title: 'Al Nasiriyah',
+    slug: 'al-nasiriyah',
+    description: 'Villa complex development in Al Nasiriyah, Riyadh',
+    location: 'Al Nasiriyah - Saudi Arabia',
+    year: 2024,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133241.png',
+    thumbnail: '/Screenshot 2026-05-12 133241.png',
+    featured: false,
+    sort_order: 3,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Residential', slug: 'residential' }
+  },
+  {
+    id: '4',
+    title: 'Amber 3390',
+    slug: 'amber-3390',
+    description: 'The Amber Residential Building is a 10-floor development featuring two distinct architectural layouts, alternating between selected floors for variety and functional design.',
+    location: 'Tripoli, Lebanon',
+    year: 2025,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133112.png',
+    thumbnail: '/Screenshot 2026-05-12 133112.png',
+    featured: false,
+    sort_order: 4,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Residential', slug: 'residential' }
+  },
+  {
+    id: '5',
+    title: 'W Hotel',
+    slug: 'w-hotel',
+    description: 'Led the technical drawings and documentation for the W Hotel project, ensuring accuracy, coordination, and constructability across all disciplines. Contributed to the early design phase by supporting conceptual development and translating design ideas into practical architectural solutions.',
+    location: 'Al Riyadh - Saudi Arabia',
+    year: 2023,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133044.png',
+    thumbnail: '/Screenshot 2026-05-12 133044.png',
+    featured: false,
+    sort_order: 5,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Commercial', slug: 'commercial' }
+  },
+  {
+    id: '6',
+    title: 'Hilton Hotel',
+    slug: 'hilton-hotel',
+    description: 'Led the interior design technical and shop drawings for the Hilton Hotel project, ensuring precision, coordination, and constructability across all spaces. Oversaw the translation of design concepts into detailed interior documentation, supporting seamless execution and high quality outcomes.',
+    location: 'Makkah - Saudi Arabia',
+    year: 2022,
+    category_id: null,
+    hero_image: '/Screenshot 2026-05-12 133233.png',
+    thumbnail: '/Screenshot 2026-05-12 133233.png',
+    featured: false,
+    sort_order: 6,
+    created_at: new Date().toISOString(),
+    categories: { name: 'Interior', slug: 'interior' }
+  }
+];
+
+const SAMPLE_CATEGORIES: Category[] = [
+  { id: '1', name: 'Residential', slug: 'residential', created_at: new Date().toISOString() },
+  { id: '2', name: 'Commercial', slug: 'commercial', created_at: new Date().toISOString() },
+  { id: '3', name: 'Interior', slug: 'interior', created_at: new Date().toISOString() }
+];
+
 export default function Projects() {
   const { ref, inView } = useInView();
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [projects, setProjects] = useState<Project[]>(SAMPLE_PROJECTS);
+  const [categories, setCategories] = useState<Category[]>(SAMPLE_CATEGORIES);
   const [activeSlug, setActiveSlug] = useState('all');
   const [hovered, setHovered] = useState<string | null>(null);
 
-  useEffect(() => {
-    supabase
-      .from('projects')
-      .select('*, categories(name, slug)')
-      .order('sort_order')
-      .then(({ data }: { data: Project[] | null }) => {
-  if (data) setProjects(data);
-});
+  // useEffect(() => {
+  //   supabase
+  //     .from('projects')
+  //     .select('*, categories(name, slug)')
+  //     .order('sort_order')
+  //     .then(({ data, error }) => {
+  // if (!error && data && data.length > 0) setProjects(data);
+  // });
 
-    supabase
-      .from('categories')
-      .select('*')
-      .order('name')
-      .then(({ data }: { data: Category[] | null }) => {
-  if (data) setCategories(data);
-});
-  }, []);
+  //   supabase
+  //     .from('categories')
+  //     .select('*')
+  //     .order('name')
+  //     .then(({ data, error }) => {
+  // if (!error && data && data.length > 0) setCategories(data);
+  // });
+  // }, []);
 
   const filtered = activeSlug === 'all'
     ? projects
@@ -82,7 +181,7 @@ export default function Projects() {
               {/* Image */}
               <div className="relative h-72 lg:h-80 overflow-hidden">
                 <img
-                  src={`${project.thumbnail}?auto=compress&cs=tinysrgb&w=700`}
+                  src={project.thumbnail}
                   alt={project.title}
                   className={`w-full h-full object-cover transition-transform duration-700 ${
                     hovered === project.id ? 'scale-110' : 'scale-100'

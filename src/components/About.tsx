@@ -16,7 +16,7 @@ export default function About() {
           <div className="relative">
             <div className="relative overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="/Screenshot 2026-05-12 133138.png"
                 alt="Architecture studio"
                 className="w-full h-[520px] object-cover"
               />

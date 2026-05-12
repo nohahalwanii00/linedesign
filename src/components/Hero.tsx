@@ -29,7 +29,7 @@ export default function Hero() {
         style={{ transform: `translateY(${scrollY * 0.4}px)` }}
       >
         <img
-          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="/Screenshot 2026-05-12 133052.png"
           alt="Architecture"
           className="w-full h-full object-cover scale-110"
         />
@@ -85,8 +85,8 @@ export default function Hero() {
         {/* Stats */}
         <div className={`mt-16 flex gap-10 transition-all duration-1000 delay-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {[
-            { number: '120+', label: 'Projects Delivered' },
-            { number: '12', label: 'Years Experience' },
+            { number: '60+', label: 'Projects Delivered' },
+            { number: '2', label: 'Years Experience' },
             { number: '8', label: 'Design Awards' },
           ].map(({ number, label }) => (
             <div key={label}>

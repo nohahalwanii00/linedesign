@@ -29,11 +29,6 @@ export interface Database {
         Insert: { project_id?: string; url: string; caption?: string; sort_order?: number };
         Update: Partial<Database['public']['Tables']['gallery_images']['Insert']>;
       };
-      messages: {
-        Row: { id: string; name: string; email: string; phone: string; subject: string; message: string; created_at: string };
-        Insert: { name: string; email: string; phone?: string; subject?: string; message: string };
-        Update: never;
-      };
       services: {
         Row: { id: string; title: string; description: string; icon: string; sort_order: number; created_at: string };
         Insert: { title: string; description?: string; icon?: string; sort_order?: number };

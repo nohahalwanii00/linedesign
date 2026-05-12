@@ -4,11 +4,19 @@ import { useInView } from '../hooks/useInView';
 import { supabase } from '../lib/supabase';
 import type { Message } from '../lib/types';
 
-const initialForm: Message = { name: '', email: '', phone: '', subject: '', message: '' };
+interface FormState {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
+const initialForm: FormState = { name: '', email: '', phone: '', subject: '', message: '' };
 
 export default function Contact() {
   const { ref, inView } = useInView();
-  const [form, setForm] = useState<Message>(initialForm);
+  const [form, setForm] = useState<FormState>(initialForm);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -21,10 +29,19 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setError('');
-    const { error: err } = await supabase
-  .from('messages' as any)
-  .insert([form]);
-  
+    
+    const messageData: Message = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone || null,
+      subject: form.subject || null,
+      message: form.message
+    };
+
+    const { error: err } = await (supabase as any)
+      .from('messages')
+      .insert([messageData]);
+    
     setLoading(false);
     if (err) { setError('Something went wrong. Please try again.'); return; }
     setSuccess(true);

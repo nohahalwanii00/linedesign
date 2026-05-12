@@ -3,13 +3,16 @@ import { X, ZoomIn } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const IMAGES = [
-  { url: '/images/Screenshot 2026-05-12 133039.png', span: 'col-span-2 row-span-2'},
-  { url: '/images/Screenshot 2026-05-12 133251.png', span: '' },
-  { url: '/images/Screenshot 2026-05-12 133241.png', span: '' },
-  { url: '/images/Screenshot 2026-05-12 133233.png', span: '' },
-  { url: '/images/Screenshot 2026-05-12 133257.png', span: 'col-span-2' },
-  { url: '/images/Screenshot 2026-05-12 133138.png', span: '' },
- 
+  { url: '/Screenshot 2026-05-12 133039.png', span: 'col-span-2 row-span-2'},
+  { url: '/Screenshot 2026-05-12 133044.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133052.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133100.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133112.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133138.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133233.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133241.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133251.png', span: '' },
+  { url: '/Screenshot 2026-05-12 133257.png', span: 'col-span-2' },
 ];
 
 export default function Gallery() {
