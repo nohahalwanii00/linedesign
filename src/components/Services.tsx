@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { Home, Layers, Map, Trees, Monitor, ClipboardList } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
-import { supabase } from '../lib/supabase';
 import type { Service } from '../lib/types';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -15,7 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const SAMPLE_SERVICES: Service[] = [
-  { id: '1', title: 'Residential Architecture', description: 'Designing bespoke homes tailored to your lifestyle', icon: 'Home', sort_order: 1, created_at: new Date().toISOString() },
+  { id: '1', title: 'Residential Architecture', description: 'Crafting interior spaces that reflect your personality', icon: 'Home', sort_order: 1, created_at: new Date().toISOString() },
   { id: '2', title: 'Commercial Design', description: 'Creating inspiring workspaces that elevate productivity', icon: 'Layers', sort_order: 2, created_at: new Date().toISOString() },
   { id: '3', title: 'Interior Design', description: 'Crafting interior spaces that reflect your personality', icon: 'Monitor', sort_order: 3, created_at: new Date().toISOString() },
   { id: '4', title: 'Urban Planning', description: 'Designing sustainable communities for tomorrow', icon: 'Map', sort_order: 4, created_at: new Date().toISOString() },
@@ -25,19 +24,7 @@ const SAMPLE_SERVICES: Service[] = [
 
 export default function Services() {
   const { ref, inView } = useInView();
-  const [services, setServices] = useState<Service[]>(SAMPLE_SERVICES);
-
- // useEffect(() => {
- //  supabase
- //    .from('services')
- //    .select('*')
- //    .order('sort_order')
- //    .then(({ data, error }) => {
- //      if (!error && data && data.length > 0) {
- //        setServices(data);
- //      }
- //    });
- // }, []);
+  const [services] = useState<Service[]>(SAMPLE_SERVICES);
   return (
     <section id="services" className="py-28 lg:py-36 bg-stone-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">

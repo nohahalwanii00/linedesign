@@ -1,5 +1,5 @@
 import {
-  Camera,Mail, ArrowUp
+  Mail, ArrowUp
 } from 'lucide-react';
 
 export default function Footer() {
@@ -31,12 +31,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <svg width="36" height="36" viewBox="0 0 60 60" fill="none">
-                <polygon points="30,4 56,18 56,42 30,56 4,42 4,18" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-                <rect x="20" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-                <rect x="32" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-                <rect x="23" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
-                <rect x="35" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
+              <svg width="50" height="50" viewBox="0 0 200 200" fill="none">
+                <path d="M40 20 L40 180 L60 180 L60 40 L100 40 L100 60 L80 60 L80 160 L160 160 L160 80 L140 80 L140 100 L120 100 L120 140 L100 140 L100 120 L180 120 L180 20 L160 20 L160 100 L180 100 L180 60 L160 60 L160 40 Z" fill="#d4af7a" />
               </svg>
               <div className="leading-tight">
                 <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
@@ -48,10 +44,8 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               {[
-              { icon: Camera, href: '#' },
-              
-               
-                { icon: Mail, href: 'mailto:ArchitectAbdelRahmanKhaled@gmail.com' },
+          
+                { icon: Mail, href: 'mailto:Linedesign.lb@gmail.com' },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}

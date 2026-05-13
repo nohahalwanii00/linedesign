@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight, MapPin, Calendar } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
-import { supabase } from '../lib/supabase';
 import type { Project, Category } from '../lib/types';
 
 const SAMPLE_PROJECTS: Project[] = [
@@ -105,8 +104,8 @@ const SAMPLE_CATEGORIES: Category[] = [
 
 export default function Projects() {
   const { ref, inView } = useInView();
-  const [projects, setProjects] = useState<Project[]>(SAMPLE_PROJECTS);
-  const [categories, setCategories] = useState<Category[]>(SAMPLE_CATEGORIES);
+  const [projects] = useState<Project[]>(SAMPLE_PROJECTS);
+  const [categories] = useState<Category[]>(SAMPLE_CATEGORIES);
   const [activeSlug, setActiveSlug] = useState('all');
   const [hovered, setHovered] = useState<string | null>(null);
 

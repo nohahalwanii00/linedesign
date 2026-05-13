@@ -46,12 +46,9 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
         {/* Logo */}
         <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-          <svg width="38" height="38" viewBox="0 0 60 60" fill="none" className="shrink-0">
-            <polygon points="30,4 56,18 56,42 30,56 4,42 4,18" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-            <rect x="20" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-            <rect x="32" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-            <rect x="23" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
-            <rect x="35" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
+          <svg width="50" height="50" viewBox="0 0 200 200" fill="none" className="shrink-0">
+            <path d="M40 20 L40 180 L60 180 L60 40 L100 40 L100 60 L80 60 L80 160 L160 160 L160 80 L140 80 L140 100 L120 100 L120 140 L100 140 L100 120 L180 120 L180 20 L160 20 L160 100 L180 100 L180 60 L160 60 L160 40 Z" fill="#d4af7a" />
+            <path d="M40 20 L40 180 L60 180 L60 40 L100 40 L100 60 L80 60 L80 160 L160 160 L160 80 L140 80 L140 100 L120 100 L120 140 L100 140 L100 120 L180 120 L180 20 L160 20 L160 100 L180 100 L180 60 L160 60 L160 40 Z" fill="#d4af7a" />
           </svg>
           <div className="leading-tight">
             <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>

@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
-import { supabase } from '../lib/supabase';
-import type { Message } from '../lib/types';
 
 interface FormState {
   name: string;
@@ -30,23 +28,23 @@ export default function Contact() {
     setLoading(true);
     setError('');
     
-    const messageData: Message = {
-      name: form.name,
-      email: form.email,
-      phone: form.phone || null,
-      subject: form.subject || null,
-      message: form.message
-    };
-
-    const { error: err } = await (supabase as any)
-      .from('messages')
-      .insert([messageData]);
+    const whatsappMessage = `New Contact from Line Design Website:
+Name: ${form.name}
+Email: ${form.email}
+Phone: ${form.phone || 'Not provided'}
+Subject: ${form.subject || 'Not provided'}
+Message: ${form.message}`;
+    
+    const whatsappUrl = `https://wa.me/96181213016?text=${encodeURIComponent(whatsappMessage)}`;
     
     setLoading(false);
-    if (err) { setError('Something went wrong. Please try again.'); return; }
     setSuccess(true);
     setForm(initialForm);
-    setTimeout(() => setSuccess(false), 5000);
+    
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+      setSuccess(false);
+    }, 1500);
   };
 
   return (
@@ -77,7 +75,7 @@ export default function Contact() {
               {[
                 { icon: MapPin, label: 'Studio Address', value: 'Tripoli, Lebanon' },
                 { icon: Phone, label: 'Phone / WhatsApp', value: '+961 81 213 016' },
-                { icon: Mail, label: 'Email', value: 'ArchitectAbdelRahmanKhaled@gmail.com' },
+                { icon: Mail, label: 'Email', value: 'Linedesign.lb@gmail.com' },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-amber-400/30 flex items-center justify-center shrink-0">
@@ -93,7 +91,7 @@ export default function Contact() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/+961 81 213 016"
+              href="https://wa.me/+96181213016"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-green-600/20 border border-green-600/40 text-green-400 text-xs tracking-[0.2em] uppercase px-6 py-3 hover:bg-green-600/30 transition-all duration-300"
@@ -151,7 +149,7 @@ export default function Contact() {
                       value={form.phone}
                       onChange={handleChange}
                       className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300 placeholder:text-stone-600"
-                      placeholder="+961 10 000 000"
+                      placeholder="+961 ** *** ***"
                     />
                   </div>
                   <div>
