@@ -46,14 +46,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
         {/* Logo */}
         <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-          <svg width="50" height="50" viewBox="0 0 200 200" fill="none" className="shrink-0">
-            <path d="M40 20 L40 180 L60 180 L60 40 L100 40 L100 60 L80 60 L80 160 L160 160 L160 80 L140 80 L140 100 L120 100 L120 140 L100 140 L100 120 L180 120 L180 20 L160 20 L160 100 L180 100 L180 60 L160 60 L160 40 Z" fill="#d4af7a" />
-            <path d="M40 20 L40 180 L60 180 L60 40 L100 40 L100 60 L80 60 L80 160 L160 160 L160 80 L140 80 L140 100 L120 100 L120 140 L100 140 L100 120 L180 120 L180 20 L160 20 L160 100 L180 100 L180 60 L160 60 L160 40 Z" fill="#d4af7a" />
-          </svg>
-          <div className="leading-tight">
-            <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
-            <div className="text-stone-400 text-[9px] tracking-[0.35em] uppercase">Architect Abdelrahman Khaled</div>
-          </div>
+          <img src="/Screenshot%202026-05-13%20125550.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
         </button>
 
         {/* Desktop links */}
