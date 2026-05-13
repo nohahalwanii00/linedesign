@@ -6,14 +6,14 @@ import type { Project, Category } from '../lib/types';
 const SAMPLE_PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'GREENERY WORLD',
+    title: 'GREENERY WORLD ',
     slug: 'graduation-project',
-    description: 'INTERGATION BETWEEN THE NATURE AND HUMANS BY USING ARCHITECTURAL ELEMENTS OF ENVIRONMENTAL PSYCHOLOGY',
+    description: 'Greenery world is nature therapy center that aims to provide a better psychological life for citizens by using architectural elements of environmental psychology',
     location: 'Tripoli, Lebanon',
     year: 2025,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133039.png',
-    thumbnail: '/Screenshot 2026-05-12 133039.png',
+    hero_image: '/Screenshot 2026-05-13 225557.png',
+    thumbnail: '/Screenshot 2026-05-13 225557.png',
     featured: true,
     sort_order: 1,
     created_at: new Date().toISOString(),
