@@ -31,7 +31,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/Screenshot%202026-05-13%20125550.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
+              <svg width="80" height="80" viewBox="0 0 400 400" fill="none">
+                <path d="M100 100 L100 300 L130 330 L330 330 L330 130 L300 100 L100 100 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+                <path d="M160 140 L160 260 L190 290 L220 290 L220 170 L190 140 L160 140 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+                <path d="M220 170 L220 290 L250 290 L250 170 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
+                <path d="M270 120 L270 320 L300 330 L300 130 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
+                <path d="M270 120 L300 130 L300 210 L270 200 L270 120 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+              </svg>
             </div>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">
               A luxury architecture and interior design studio crafting timeless spaces in Tripoli, Lebanon.

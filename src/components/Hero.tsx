@@ -29,7 +29,7 @@ export default function Hero() {
         style={{ transform: `translateY(${scrollY * 0.4}px)` }}
       >
         <img
-          src="/Screenshot 2026-05-12 133052.png"
+          src="/Screenshot 2026-05-13 125550.png"
           alt="Architecture"
           className="w-full h-full object-cover scale-110"
         />
@@ -46,9 +46,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative h-full flex flex-col justify-center max-w-7xl mx-auto px-6 lg:px-10">
         <div className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-amber-400 text-xs tracking-[0.4em] uppercase mb-6 delay-100">
-            Architect Abdelrahman Khaled 
-          </p>
+          <svg width="180" height="180" viewBox="0 0 400 400" fill="none" className="mb-8">
+            <path d="M100 100 L100 300 L130 330 L330 330 L330 130 L300 100 L100 100 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+            <path d="M160 140 L160 260 L190 290 L220 290 L220 170 L190 140 L160 140 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+            <path d="M220 170 L220 290 L250 290 L250 170 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
+            <path d="M270 120 L270 320 L300 330 L300 130 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
+            <path d="M270 120 L300 130 L300 210 L270 200 L270 120 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
+          </svg>
         </div>
 
         <div className={`transition-all duration-1000 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -85,9 +89,9 @@ export default function Hero() {
         {/* Stats */}
         <div className={`mt-16 flex gap-10 transition-all duration-1000 delay-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {[
-            { number: '60+', label: 'Projects Delivered' },
-            { number: '2', label: 'Years Experience' },
-            { number: '8', label: 'Design Awards' },
+            { number: '10+', label: 'Projects Delivered' },
+            { number: '1', label: 'Years Experience' },
+            { number: '1', label: 'Design Awards' },
           ].map(({ number, label }) => (
             <div key={label}>
               <div className="text-2xl font-light text-amber-400">{number}</div>
