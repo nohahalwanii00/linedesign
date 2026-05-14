@@ -27,9 +27,9 @@ export default function About() {
             <div className="absolute -top-6 -left-6 w-28 h-28 border border-stone-700/60 -z-10" />
 
             {/* Badge */}
-            <div className="absolute bottom-8 left-8 bg-stone-950/90 backdrop-blur-sm border border-white/10 px-6 py-5">
-              <div className="text-3xl font-light text-amber-400">2+</div>
-              <div className="text-stone-300 text-xs tracking-[0.2em] uppercase mt-1">Years of Excellence</div>
+            <div className="absolute bottom-8 right-6   bg-stone-800/90 backdrop-blur-sm border border-white/10 px-6 py-5">
+              <div className="text-3xl font-light text-amber-400"></div>
+              <div className="text-amber-400 -right-6 text-xs  tracking-[0.2em] uppercase mt-1">Est.2025  </div>
             </div>
           </div>
 

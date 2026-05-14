@@ -3,16 +3,22 @@ import { X, ZoomIn } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const IMAGES = [
-  { url: '/Screenshot 2026-05-12 133039.png', span: 'col-span-2 row-span-2'},
-  { url: '/Screenshot 2026-05-12 133044.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133052.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133100.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133112.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133138.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133233.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133241.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133251.png', span: '' },
-  { url: '/Screenshot 2026-05-12 133257.png', span: 'col-span-2' },
+  { url: '/photo3.jpeg', span: 'col-span-2 row-span-2'},
+  { url: '/h.png', span: '' },
+  { url: '/photo.jpeg', span: '' },
+   { url: '/photo1.jpeg', span: '' },
+    { url: '/photo2.jpeg', span: '' },
+  { url: '/n.png', span: '' },
+  
+  { url: '/an.png', span: '' },
+  { url: '/p.png', span: '' },
+  { url: '/bb.jpeg', span: '' },
+  { url: '/hh.png', span: '' },
+ { url: '/b.jpeg', span: '' },
+  { url: '/gg.png', span: '' },
+   { url: '/222.jpeg', span: '' },
+  { url: '/jj.png', span: '' },
+ 
 ];
 
 export default function Gallery() {

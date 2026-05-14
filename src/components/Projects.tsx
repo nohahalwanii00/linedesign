@@ -12,8 +12,8 @@ const SAMPLE_PROJECTS: Project[] = [
     location: 'Tripoli, Lebanon',
     year: 2025,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-13 225557.png',
-    thumbnail: '/Screenshot 2026-05-13 225557.png',
+    hero_image: '/photo3.jpeg',
+    thumbnail: '/photo3.jpeg',
     featured: true,
     sort_order: 1,
     created_at: new Date().toISOString(),
@@ -23,12 +23,12 @@ const SAMPLE_PROJECTS: Project[] = [
     id: '2',
     title: 'Al Nasiriyah Compound',
     slug: 'al-nasiriyah-compound',
-    description: 'Designed and developed innovative execution drawings for a villa complex in Al Nasiriyah, Riyadh, ensuring precision, clarity, and constructability. Translated architectural concepts into detailed technical documentation, enhancing workflow efficiency and supporting seamless project implementation.',
+    description: 'Designed and developed innovative execution drawings for a villa complex in Al Nasiriyah, Riyadh.',
     location: 'Al Nasiriyah - Saudi Arabia',
-    year: 2024,
+    year: 2025,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133100.png',
-    thumbnail: '/Screenshot 2026-05-12 133100.png',
+    hero_image: '/jj.png',
+    thumbnail: '/jj.png',
     featured: false,
     sort_order: 2,
     created_at: new Date().toISOString(),
@@ -36,14 +36,14 @@ const SAMPLE_PROJECTS: Project[] = [
   },
   {
     id: '3',
-    title: 'Al Nasiriyah',
-    slug: 'al-nasiriyah',
-    description: 'Villa complex development in Al Nasiriyah, Riyadh',
-    location: 'Al Nasiriyah - Saudi Arabia',
-    year: 2024,
+    title: 'AURORA CULTURAL CENTER',
+    slug: 'AURORA CULTURAL CENTER',
+    description: 'The design seamlessly balances a high-end, modern aesthetic with warm interior lighting and thoughtfully integrated landscape architecture.',
+    location: 'Tripoli, Lebanon',
+    year: 2025,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133241.png',
-    thumbnail: '/Screenshot 2026-05-12 133241.png',
+    hero_image: '/photo2.jpeg',
+    thumbnail: '/photo2.jpeg',
     featured: false,
     sort_order: 3,
     created_at: new Date().toISOString(),
@@ -53,12 +53,12 @@ const SAMPLE_PROJECTS: Project[] = [
     id: '4',
     title: 'Amber 3390',
     slug: 'amber-3390',
-    description: 'The Amber Residential Building is a 10-floor development featuring two distinct architectural layouts, alternating between selected floors for variety and functional design.',
+    description: 'developed detailed execution drawings for the amber residentialbuilding.',
     location: 'Tripoli, Lebanon',
-    year: 2025,
+    year: 2026,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133112.png',
-    thumbnail: '/Screenshot 2026-05-12 133112.png',
+    hero_image: '/b.jpeg',
+    thumbnail: '/b.jpeg',
     featured: false,
     sort_order: 4,
     created_at: new Date().toISOString(),
@@ -68,12 +68,12 @@ const SAMPLE_PROJECTS: Project[] = [
     id: '5',
     title: 'W Hotel',
     slug: 'w-hotel',
-    description: 'Led the technical drawings and documentation for the W Hotel project, ensuring accuracy, coordination, and constructability across all disciplines. Contributed to the early design phase by supporting conceptual development and translating design ideas into practical architectural solutions.',
+    description: 'led the technical drawings and documentation for the w hotel project.',
     location: 'Al Riyadh - Saudi Arabia',
-    year: 2023,
+    year: 2026,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133044.png',
-    thumbnail: '/Screenshot 2026-05-12 133044.png',
+    hero_image: '/h.png',
+    thumbnail: '/h.png',
     featured: false,
     sort_order: 5,
     created_at: new Date().toISOString(),
@@ -83,12 +83,12 @@ const SAMPLE_PROJECTS: Project[] = [
     id: '6',
     title: 'Hilton Hotel',
     slug: 'hilton-hotel',
-    description: 'Led the interior design technical and shop drawings for the Hilton Hotel project, ensuring precision, coordination, and constructability across all spaces. Oversaw the translation of design concepts into detailed interior documentation, supporting seamless execution and high quality outcomes.',
+    description: 'Led the interior design technical and shop drawings for the Hilton Hotel project.',
     location: 'Makkah - Saudi Arabia',
-    year: 2022,
+    year: 2026,
     category_id: null,
-    hero_image: '/Screenshot 2026-05-12 133233.png',
-    thumbnail: '/Screenshot 2026-05-12 133233.png',
+    hero_image: '/n.png',
+    thumbnail: '/n.png',
     featured: false,
     sort_order: 6,
     created_at: new Date().toISOString(),
@@ -181,12 +181,12 @@ export default function Projects() {
               <div className="relative h-72 lg:h-80 overflow-hidden">
                 <img
                   src={project.thumbnail}
-                  alt={project.title}
+                  alt={project.title} 
                   className={`w-full h-full object-cover transition-transform duration-700 ${
                     hovered === project.id ? 'scale-110' : 'scale-100'
                   }`}
                 />
-                <div className={`absolute inset-0 bg-stone-950/70 transition-opacity duration-500 ${
+   <div className={`absolute inset-0 bg-stone-950/70 transition-opacity duration-500 ${
                   hovered === project.id ? 'opacity-100' : 'opacity-0'
                 }`} />
 
@@ -196,7 +196,7 @@ export default function Projects() {
                 }`}>
                   <p className="text-stone-300 text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
                   <div className="flex items-center gap-2 text-amber-400 text-xs tracking-[0.2em] uppercase">
-                    <span>View Project</span>
+                    <span></span>
                     <ArrowRight size={12} />
                   </div>
                 </div>

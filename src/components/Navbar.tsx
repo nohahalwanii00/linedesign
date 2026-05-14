@@ -43,20 +43,18 @@ export default function Navbar() {
         scrolled ? 'bg-stone-950/95 backdrop-blur-sm shadow-lg shadow-black/30' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+      <nav className="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl lg:px-10">
         {/* Logo */}
         <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-          <svg width="80" height="80" viewBox="0 0 400 400" fill="none" className="shrink-0">
-            <path d="M100 100 L100 300 L130 330 L330 330 L330 130 L300 100 L100 100 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-            <path d="M160 140 L160 260 L190 290 L220 290 L220 170 L190 140 L160 140 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-            <path d="M220 170 L220 290 L250 290 L250 170 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
-            <path d="M270 120 L270 320 L300 330 L300 130 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
-            <path d="M270 120 L300 130 L300 210 L270 200 L270 120 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-          </svg>
+          <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
+          <div className="leading-tight">
+            <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
+            <div className="text-stone-400 text-[9px] tracking-[0.35em] uppercase">Architect Abdelrahman Khaled</div>
+          </div>
         </button>
 
         {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-8">
+        <ul className="items-center hidden gap-8 lg:flex">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <button
@@ -85,7 +83,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(o => !o)}
-          className="lg:hidden text-white p-1"
+          className="p-1 text-white lg:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -94,7 +92,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div className={`lg:hidden overflow-hidden transition-all duration-400 ${open ? 'max-h-screen' : 'max-h-0'}`}>
-        <div className="bg-stone-950/98 backdrop-blur-sm border-t border-white/5 px-6 py-6 flex flex-col gap-5">
+        <div className="flex flex-col gap-5 px-6 py-6 border-t bg-stone-950/98 backdrop-blur-sm border-white/5">
           {navLinks.map(({ label, href }) => (
             <button
               key={href}

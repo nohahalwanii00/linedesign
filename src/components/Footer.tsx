@@ -24,22 +24,20 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-stone-950 border-t border-white/5">
+    <footer className="border-t bg-stone-950 border-white/5">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-10">
-        <div className="grid lg:grid-cols-4 gap-12">
+      <div className="px-6 pt-16 pb-10 mx-auto max-w-7xl lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <svg width="80" height="80" viewBox="0 0 400 400" fill="none">
-                <path d="M100 100 L100 300 L130 330 L330 330 L330 130 L300 100 L100 100 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-                <path d="M160 140 L160 260 L190 290 L220 290 L220 170 L190 140 L160 140 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-                <path d="M220 170 L220 290 L250 290 L250 170 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
-                <path d="M270 120 L270 320 L300 330 L300 130 Z" fill="#d4af7a" stroke="#d4af7a" strokeWidth="4"/>
-                <path d="M270 120 L300 130 L300 210 L270 200 L270 120 Z" stroke="#d4af7a" strokeWidth="8" fill="none"/>
-              </svg>
+              <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
+              <div className="leading-tight">
+                <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
+                <div className="text-stone-500 text-[9px] tracking-[0.3em] uppercase">Architect Abdelrahman Khaled</div>
+              </div>
             </div>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6">
+            <p className="mb-6 text-sm leading-relaxed text-stone-500">
               A luxury architecture and interior design studio crafting timeless spaces in Tripoli, Lebanon.
             </p>
             <div className="flex items-center gap-3">
@@ -50,7 +48,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href={href}
-                  className="w-9 h-9 border border-white/10 flex items-center justify-center text-stone-500 hover:border-amber-400/50 hover:text-amber-400 transition-all duration-300"
+                  className="flex items-center justify-center transition-all duration-300 border w-9 h-9 border-white/10 text-stone-500 hover:border-amber-400/50 hover:text-amber-400"
                 >
                   <Icon size={14} />
                 </a>
@@ -66,7 +64,7 @@ export default function Footer() {
                 <li key={href}>
                   <button
                     onClick={() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-stone-500 text-sm hover:text-amber-400 transition-colors duration-300"
+                    className="text-sm transition-colors duration-300 text-stone-500 hover:text-amber-400"
                   >
                     {label}
                   </button>
@@ -80,7 +78,7 @@ export default function Footer() {
             <h4 className="text-white text-xs tracking-[0.3em] uppercase mb-6">Services</h4>
             <ul className="space-y-3">
               {services.map(s => (
-                <li key={s} className="text-stone-500 text-sm">{s}</li>
+                <li key={s} className="text-sm text-stone-500">{s}</li>
               ))}
             </ul>
           </div>
@@ -88,7 +86,7 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-white text-xs tracking-[0.3em] uppercase mb-6">Stay Informed</h4>
-            <p className="text-stone-500 text-sm leading-relaxed mb-5">
+            <p className="mb-5 text-sm leading-relaxed text-stone-500">
               Subscribe to receive updates on new projects, design insights and studio news.
             </p>
             <div className="flex">
@@ -107,8 +105,8 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-stone-600 text-xs">
+        <div className="flex flex-col items-center justify-between gap-4 px-6 py-5 mx-auto max-w-7xl lg:px-10 sm:flex-row">
+          <p className="text-xs text-stone-600">
             &copy; {new Date().getFullYear()} Line Design &mdash; Architect Abdelrahman Khaled. All rights reserved.
           </p>
           <button

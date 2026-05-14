@@ -17,19 +17,13 @@ export default function LoadingScreen({ onDone }: Props) {
 
   return (
     <div className="fixed inset-0 z-[100] bg-stone-950 flex flex-col items-center justify-center">
-      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" className="mb-8">
-        <polygon points="30,4 56,18 56,42 30,56 4,42 4,18" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-        <rect x="20" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-        <rect x="32" y="14" width="8" height="32" stroke="#d4af7a" strokeWidth="1.5" fill="none"/>
-        <rect x="23" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
-        <rect x="35" y="18" width="2" height="24" fill="#d4af7a" opacity="0.6"/>
-      </svg>
+     <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
       <div className="text-white font-light tracking-[0.4em] text-sm uppercase mb-1">Line Design</div>
       <div className="text-stone-500 text-[9px] tracking-[0.4em] uppercase mb-10">Architect Abdelrahman Khaled</div>
 
-      <div className="w-48 h-px bg-stone-800 relative overflow-hidden">
+      <div className="relative w-48 h-px overflow-hidden bg-stone-800">
         <div
-          className="absolute inset-y-0 left-0 bg-amber-400 transition-all duration-150"
+          className="absolute inset-y-0 left-0 transition-all duration-150 bg-amber-400"
           style={{ width: `${Math.min(progress, 100)}%` }}
         />
       </div>
