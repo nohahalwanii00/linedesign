@@ -6,9 +6,9 @@ import type { Project, Category } from '../lib/types';
 const SAMPLE_PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'GREENERY WORLD ',
+    title: 'Greneery world',
     slug: 'graduation-project',
-    description: 'Greenery world is nature therapy center that aims to provide a better psychological life for citizens by using architectural elements of environmental psychology',
+    description: 'Greenery world is nature therapy center that aims to provide a better psychological life for citizens by using architectural elements of environmental psychology.',
     location: 'Tripoli, Lebanon',
     year: 2025,
     category_id: null,
@@ -36,7 +36,7 @@ const SAMPLE_PROJECTS: Project[] = [
   },
   {
     id: '3',
-    title: 'AURORA CULTURAL CENTER',
+    title: 'Aurora cultural center',
     slug: 'AURORA CULTURAL CENTER',
     description: 'The design seamlessly balances a high-end, modern aesthetic with warm interior lighting and thoughtfully integrated landscape architecture.',
     location: 'Tripoli, Lebanon',
@@ -47,7 +47,7 @@ const SAMPLE_PROJECTS: Project[] = [
     featured: false,
     sort_order: 3,
     created_at: new Date().toISOString(),
-    categories: { name: 'Residential', slug: 'residential' }
+    categories: { name: 'commercial', slug: 'commercial' }
   },
   {
     id: '4',
@@ -133,15 +133,15 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-28 lg:py-36 bg-stone-950">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="px-6 mx-auto max-w-7xl lg:px-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-12 lg:mb-16">
+        <div className="flex flex-col justify-between gap-8 mb-12 sm:flex-row sm:items-end lg:mb-16">
           <div className="max-w-xl">
             <p className="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Our Work</p>
-            <h2 className="text-white text-4xl lg:text-5xl font-light leading-tight">
+            <h2 className="text-4xl font-light leading-tight text-white lg:text-5xl">
               Selected Projects
             </h2>
-            <div className="w-12 h-px bg-amber-400 mt-6" />
+            <div className="w-12 h-px mt-6 bg-amber-400" />
           </div>
 
           {/* Filter */}
@@ -172,13 +172,13 @@ export default function Projects() {
           {filtered.map((project, i) => (
             <div
               key={project.id}
-              className="relative overflow-hidden group cursor-pointer bg-stone-900"
+              className="relative overflow-hidden cursor-pointer group bg-stone-900"
               style={{ transitionDelay: `${i * 80}ms` }}
               onMouseEnter={() => setHovered(project.id)}
               onMouseLeave={() => setHovered(null)}
             >
               {/* Image */}
-              <div className="relative h-72 lg:h-80 overflow-hidden">
+              <div className="relative overflow-hidden h-72 lg:h-80">
                 <img
                   src={project.thumbnail}
                   alt={project.title} 
@@ -194,10 +194,10 @@ export default function Projects() {
                 <div className={`absolute inset-0 flex flex-col justify-end p-6 transition-all duration-500 ${
                   hovered === project.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}>
-                  <p className="text-stone-300 text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
+                  <p className="mb-4 text-sm leading-relaxed text-stone-300 line-clamp-3">{project.description}</p>
                   <div className="flex items-center gap-2 text-amber-400 text-xs tracking-[0.2em] uppercase">
                     <span></span>
-                    <ArrowRight size={12} />
+                    <ArrowRight size={1} />
                   </div>
                 </div>
 
@@ -211,12 +211,12 @@ export default function Projects() {
               {/* Meta */}
               <div className="p-5 bg-stone-900">
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="text-white font-light text-lg">{project.title}</h3>
+                  <h3 className="text-lg font-light text-white">{project.title}</h3>
                   <span className="text-amber-400 text-[10px] tracking-wider uppercase shrink-0 mt-1">
                     {project.categories?.name}
                   </span>
                 </div>
-                <div className="flex items-center gap-4 text-stone-500 text-xs">
+                <div className="flex items-center gap-4 text-xs text-stone-500">
                   <span className="flex items-center gap-1.5">
                     <MapPin size={10} />
                     {project.location}

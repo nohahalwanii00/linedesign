@@ -42,14 +42,15 @@ Message: ${form.message}`;
     setForm(initialForm);
     
     setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setSuccess(false);
-    }, 1500);
+      // Mobile browsers often block window.open from inside async handlers.
+      // Use a normal navigation so WhatsApp reliably opens on phone.
+      window.location.href = whatsappUrl;
+    }, 300);
   };
 
   return (
     <section id="contact" className="py-28 lg:py-36 bg-stone-950">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="px-6 mx-auto max-w-7xl lg:px-10">
         <div
           ref={ref}
           className={`grid lg:grid-cols-2 gap-16 lg:gap-24 transition-all duration-1000 ${
@@ -59,31 +60,31 @@ Message: ${form.message}`;
           {/* Info */}
           <div>
             <p className="text-amber-400 text-xs tracking-[0.4em] uppercase mb-4">Get In Touch</p>
-            <h2 className="text-white text-4xl lg:text-5xl font-light leading-tight mb-8">
+            <h2 className="mb-8 text-4xl font-light leading-tight text-white lg:text-5xl">
               Let's Build<br />
               <span className="italic text-stone-300">Something Together</span>
             </h2>
-            <div className="w-12 h-px bg-amber-400 mb-10" />
+            <div className="w-12 h-px mb-10 bg-amber-400" />
 
-            <p className="text-stone-400 leading-relaxed mb-10">
+            <p className="mb-10 leading-relaxed text-stone-400">
               Whether you have a specific project in mind or simply want 
               to explore possibilities, we'd love to hear from you.
                Every great building begins with a conversation.
             </p>
 
-            <div className="space-y-6 mb-12">
+            <div className="mb-12 space-y-6">
               {[
                 { icon: MapPin, label: 'Studio Address', value: 'Tripoli, Lebanon' },
                 { icon: Phone, label: 'Phone / WhatsApp', value: '+961 81 213 016' },
                 { icon: Mail, label: 'Email', value: 'Linedesign.lb@gmail.com' },
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 border border-amber-400/30 flex items-center justify-center shrink-0">
+                  <div className="flex items-center justify-center w-10 h-10 border border-amber-400/30 shrink-0">
                     <Icon size={16} className="text-amber-400" />
                   </div>
                   <div>
                     <div className="text-stone-500 text-xs tracking-[0.15em] uppercase mb-0.5">{label}</div>
-                    <div className="text-stone-200 text-sm">{value}</div>
+                    <div className="text-sm text-stone-200">{value}</div>
                   </div>
                 </div>
               ))}
@@ -104,18 +105,18 @@ Message: ${form.message}`;
           </div>
 
           {/* Form */}
-          <div className="bg-stone-900 border border-white/5 p-8 lg:p-10">
+          <div className="p-8 border bg-stone-900 border-white/5 lg:p-10">
             {success ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                <CheckCircle size={48} className="text-green-400 mb-4" />
-                <h3 className="text-white text-xl font-light mb-2">Message Sent</h3>
-                <p className="text-stone-400 text-sm">Thank you for reaching out. We'll be in touch shortly.</p>
+              <div className="flex flex-col items-center justify-center h-full py-12 text-center">
+                <CheckCircle size={48} className="mb-4 text-green-400" />
+                <h3 className="mb-2 text-xl font-light text-white">Message Sent</h3>
+                <p className="text-sm text-stone-400">Thank you for reaching out. We'll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h3 className="text-white text-lg font-light mb-6 tracking-wide">Send a Message</h3>
+                <h3 className="mb-6 text-lg font-light tracking-wide text-white">Send a Message</h3>
 
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label className="text-stone-500 text-xs tracking-[0.15em] uppercase block mb-2">Full Name *</label>
                     <input
@@ -123,7 +124,7 @@ Message: ${form.message}`;
                       value={form.name}
                       onChange={handleChange}
                       required
-                      className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300 placeholder:text-stone-600"
+                      className="w-full px-4 py-3 text-sm text-white transition-colors duration-300 border bg-stone-800 border-white/10 focus:outline-none focus:border-amber-400/60 placeholder:text-stone-600"
                       placeholder="Abdelrahman Khaled"
                     />
                   </div>
@@ -135,20 +136,20 @@ Message: ${form.message}`;
                       value={form.email}
                       onChange={handleChange}
                       required
-                      className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300 placeholder:text-stone-600"
+                      className="w-full px-4 py-3 text-sm text-white transition-colors duration-300 border bg-stone-800 border-white/10 focus:outline-none focus:border-amber-400/60 placeholder:text-stone-600"
                       placeholder="you@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label className="text-stone-500 text-xs tracking-[0.15em] uppercase block mb-2">Phone</label>
                     <input
                       name="phone"
                       value={form.phone}
                       onChange={handleChange}
-                      className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300 placeholder:text-stone-600"
+                      className="w-full px-4 py-3 text-sm text-white transition-colors duration-300 border bg-stone-800 border-white/10 focus:outline-none focus:border-amber-400/60 placeholder:text-stone-600"
                       placeholder="+961 ** *** ***"
                     />
                   </div>
@@ -158,7 +159,7 @@ Message: ${form.message}`;
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
-                      className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300"
+                      className="w-full px-4 py-3 text-sm text-white transition-colors duration-300 border bg-stone-800 border-white/10 focus:outline-none focus:border-amber-400/60"
                     >
                       <option value="">Select a subject</option>
                       <option>Residential Project</option>
@@ -178,12 +179,12 @@ Message: ${form.message}`;
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full bg-stone-800 border border-white/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-amber-400/60 transition-colors duration-300 resize-none placeholder:text-stone-600"
+                    className="w-full px-4 py-3 text-sm text-white transition-colors duration-300 border resize-none bg-stone-800 border-white/10 focus:outline-none focus:border-amber-400/60 placeholder:text-stone-600"
                     placeholder="Tell us about your project..."
                   />
                 </div>
 
-                {error && <p className="text-red-400 text-sm">{error}</p>}
+                {error && <p className="text-sm text-red-400">{error}</p>}
 
                 <button
                   type="submit"

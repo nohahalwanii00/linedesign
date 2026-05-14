@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
+              <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '80px', height: '60px' }} />
               <div className="leading-tight">
                 <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
                 <div className="text-stone-500 text-[9px] tracking-[0.3em] uppercase">Architect Abdelrahman Khaled</div>

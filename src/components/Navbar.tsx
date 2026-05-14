@@ -46,7 +46,7 @@ export default function Navbar() {
       <nav className="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl lg:px-10">
         {/* Logo */}
         <button onClick={() => scrollTo('#home')} className="flex items-center gap-3 group">
-          <img src="/logoo.png" alt="Line Design Logo" className="shrink-0" style={{ width: '60px', height: '60px' }} />
+          <img src="/logoo1.png" alt="Line Design Logo" className="shrink-0" style={{ width: '90px', height: '60px' }} />
           <div className="leading-tight">
             <div className="text-white font-light tracking-[0.25em] text-sm uppercase">Line Design</div>
             <div className="text-stone-400 text-[9px] tracking-[0.35em] uppercase">Architect Abdelrahman Khaled</div>
