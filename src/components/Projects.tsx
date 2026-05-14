@@ -8,7 +8,7 @@ const SAMPLE_PROJECTS: Project[] = [
     id: '1',
     title: 'Greneery world',
     slug: 'graduation-project',
-    description: 'Greenery world is nature therapy center that aims to provide a better psychological life for citizens by using architectural elements of environmental psychology.',
+    description: 'Greenery world is nature therapy center that aims to provide a better psychological life for citizens.',
     location: 'Tripoli, Lebanon',
     year: 2025,
     category_id: null,
